@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Swarup</title>
+  <style>
+    :root {
+      --gold:       #C47A2A;
+      --dark-amber: #8B4513;
+      --deep:       #3D1F00;
+      --bg:         #F7EDD8;
+      --card:       #ffffff;
+      --text:       #3D1F00;
+      --muted:      #8B6840;
+      --border:     rgba(196,122,42,0.18);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--deep);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 44px;
+      margin-bottom: 10px;
+    }
+    .app-name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #F5D78E;
+      letter-spacing: -0.3px;
+    }
+    .app-tagline {
+      font-size: 14px;
+      color: rgba(245,215,142,0.6);
+      margin-top: 4px;
+    }
+    .policy-badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(196,122,42,0.2);
+      border: 1px solid rgba(196,122,42,0.35);
+      color: #F5D78E;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Meta bar ── */
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .meta-pill {
+      font-size: 12px;
+      color: var(--muted);
+      background: rgba(139,69,19,0.07);
+      border: 0.5px solid var(--border);
+      padding: 5px 13px;
+      border-radius: 20px;
+    }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: rgba(196,122,42,0.07);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin-bottom: 36px;
+      font-size: 14px;
+      color: var(--dark-amber);
+      line-height: 1.7;
+    }
+    .highlight strong { color: var(--gold); }
+
+    /* ── Section cards ── */
+    .section {
+      background: var(--card);
+      border: 0.5px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 22px 16px;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(247,237,216,0.5);
+    }
+    .section-icon {
+      font-size: 22px;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,122,42,0.1);
+      border-radius: 9px;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--deep);
+    }
+    .section-body {
+      padding: 18px 22px 20px;
+      font-size: 14px;
+      color: #5A3A1A;
+    }
+    .section-body p { margin-bottom: 12px; }
+    .section-body p:last-child { margin-bottom: 0; }
+    .section-body ul {
+      padding-left: 18px;
+      margin: 8px 0 12px;
+    }
+    .section-body li { margin-bottom: 6px; }
+    .section-body strong { color: var(--deep); font-weight: 600; }
+
+    /* ── Tag rows ── */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 0.5px solid var(--border);
+      background: rgba(196,122,42,0.06);
+      color: var(--dark-amber);
+    }
+    .tag.no {
+      background: rgba(40,160,80,0.07);
+      border-color: rgba(40,160,80,0.2);
+      color: #1A7A40;
+    }
+
+    /* ── Two-col grid ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 480px) { .two-col { grid-template-columns: 1fr; } }
+    .col-card {
+      background: rgba(247,237,216,0.6);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--dark-amber);
+    }
+    .col-card-title { font-weight: 600; color: var(--deep); margin-bottom: 4px; font-size: 13px; }
+
+    /* ── Contact block ── */
+    .contact-block {
+      background: var(--deep);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .contact-block h3 { font-size: 18px; color: #F5D78E; margin-bottom: 8px; }
+    .contact-block p  { font-size: 13px; color: rgba(245,215,142,0.65); margin-bottom: 14px; }
+    .contact-link {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+    .contact-link:hover { opacity: 0.88; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 0.5px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .app-name { font-size: 22px; }
+      .container { padding: 28px 16px 60px; }
+      .section-body { padding: 14px 16px 16px; }
+      .section-header { padding: 14px 16px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header>
+  <div class="logo">🪞</div>
+  <div class="app-name">Swarup</div>
+  <div class="app-tagline">Apna best version</div>
+  <span class="policy-badge">Privacy Policy</span>
+</header>
+
+<!-- ══════════════ BODY ══════════════ -->
+<div class="container">
+
+  <!-- Meta pills -->
+  <div class="meta-bar">
+    <span class="meta-pill">📅 Effective: March 19, 2026</span>
+    <span class="meta-pill">📱 Platform: iOS</span>
+    <span class="meta-pill">🌍 Audience: India</span>
+    <span class="meta-pill">🔤 Language: English / Hinglish</span>
+  </div>
+
+  <!-- TL;DR highlight -->
+  <div class="highlight">
+    <strong>Simple version (TL;DR):</strong> Swarup collects only the grooming preferences you give us during onboarding (gender, skin type, hair type, etc.). All data stays on your device. We never sell your data, never track you across other apps, and you can delete everything at any time.
+  </div>
+
+
+  <!-- 1. Who we are -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">👤</div>
+      <div class="section-title">1. Who We Are</div>
+    </div>
+    <div class="section-body">
+      <p><strong>Swarup</strong> is an Indian grooming and lifestyle app for iOS, built to help men and women discover personalized grooming routines, style tips, and self-care guidance in Hinglish.</p>
+      <p>This Privacy Policy explains what information we collect, how we use it, and your rights around it. By using Swarup, you agree to the practices described in this policy.</p>
+      <p><strong>Developer:</strong> Prit (Individual Developer)<br>
+         <strong>Contact:</strong> <a href="mailto:privacy@swarup.app" style="color:var(--gold)">privacy@swarup.app</a><br>
+         <strong>App:</strong> Swarup — available on Apple App Store</p>
+    </div>
+  </div>
+
+  <!-- 2. What data we collect -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <div class="section-title">2. What Data We Collect</div>
+    </div>
+    <div class="section-body">
+      <p>Swarup collects <strong>only the information you voluntarily provide</strong> during onboarding to personalise your experience. No account or login is required.</p>
+
+      <p><strong>Onboarding preferences (stored locally on your device):</strong></p>
+      <ul>
+        <li>Gender (Man / Woman)</li>
+        <li>Age group (e.g. 18–25, 26–35)</li>
+        <li>Skin tone (Fair / Wheatish / Dusky / Deep)</li>
+        <li>Face shape (Oval / Round / Square / Heart / Oblong)</li>
+        <li>Skin type (Oily / Dry / Combination / Normal / Sensitive)</li>
+        <li>Hair type (Straight / Wavy / Curly / Thick / Fine)</li>
+      </ul>
+
+      <p><strong>App usage data (stored locally on your device):</strong></p>
+      <ul>
+        <li>Daily grooming routine completion status</li>
+        <li>Streak count and last active date</li>
+        <li>Tips saved / bookmarked by you</li>
+        <li>In-app purchase status (Swarup Pro)</li>
+      </ul>
+
+      <div class="tag-row">
+        <span class="tag no">✓ No email required</span>
+        <span class="tag no">✓ No phone number</span>
+        <span class="tag no">✓ No real name</span>
+        <span class="tag no">✓ No location data</span>
+        <span class="tag no">✓ No camera access</span>
+        <span class="tag no">✓ No contacts access</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Where data lives -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">💾</div>
+      <div class="section-title">3. Where Your Data Lives</div>
+    </div>
+    <div class="section-body">
+      <p>All personal preferences and usage data are stored <strong>exclusively on your device</strong> using Apple's SwiftData framework (local on-device storage). This data is:</p>
+      <ul>
+        <li>Never uploaded to any server owned by Swarup</li>
+        <li>Automatically included in your device's iCloud backup if you have iCloud enabled (this is an Apple feature — Swarup does not control it)</li>
+        <li>Deleted permanently when you delete the app</li>
+      </ul>
+
+      <div class="two-col">
+        <div class="col-card">
+          <div class="col-card-title">📱 On your device</div>
+          All your profile preferences, routine history, saved tips
+        </div>
+        <div class="col-card">
+          <div class="col-card-title">☁️ iCloud (if enabled)</div>
+          Standard device backup — controlled by Apple, not Swarup
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Advertising -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📢</div>
+      <div class="section-title">4. Advertising (Google AdMob)</div>
+    </div>
+    <div class="section-body">
+      <p>The <strong>free version</strong> of Swarup displays ads powered by <strong>Google AdMob</strong>. AdMob may collect certain data to serve relevant ads. This data is collected and processed by Google, not by Swarup.</p>
+
+      <p><strong>What AdMob may collect:</strong></p>
+      <ul>
+        <li>Device advertising identifier (IDFA) — only with your consent via Apple's App Tracking Transparency prompt</li>
+        <li>IP address (approximate location for ad targeting)</li>
+        <li>App interaction data (ad views, clicks)</li>
+        <li>Device type and OS version</li>
+      </ul>
+
+      <p><strong>Important notes:</strong></p>
+      <ul>
+        <li>We <strong>never share</strong> your grooming profile data (skin type, hair type, etc.) with Google AdMob</li>
+        <li>Ads are served based on general contextual signals, not your personal grooming data</li>
+        <li>You can opt out of personalised ads in iOS Settings → Privacy → Apple Advertising, or by upgrading to <strong>Swarup Pro</strong> (completely ad-free)</li>
+      </ul>
+
+      <p>Google's Privacy Policy: <a href="https://policies.google.com/privacy" style="color:var(--gold)" target="_blank">policies.google.com/privacy</a></p>
+    </div>
+  </div>
+
+  <!-- 5. In-app purchases -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">💳</div>
+      <div class="section-title">5. In-App Purchases (Swarup Pro)</div>
+    </div>
+    <div class="section-body">
+      <p>Swarup Pro subscriptions are processed entirely through <strong>Apple's App Store</strong> using StoreKit. Swarup does not collect or store any payment information.</p>
+      <ul>
+        <li>All billing is handled by Apple — we never see your card details</li>
+        <li>We only receive a confirmation token from Apple confirming your purchase status</li>
+        <li>To manage or cancel your subscription: iOS Settings → Apple ID → Subscriptions</li>
+      </ul>
+      <p>Apple's App Store privacy practices: <a href="https://www.apple.com/legal/privacy/" style="color:var(--gold)" target="_blank">apple.com/legal/privacy</a></p>
+    </div>
+  </div>
+
+  <!-- 6. How we use data -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <div class="section-title">6. How We Use Your Data</div>
+    </div>
+    <div class="section-body">
+      <p>We use your on-device data for one purpose only — <strong>to personalise your Swarup experience</strong>:</p>
+      <ul>
+        <li>Show grooming tips relevant to your skin type, hair type, and gender</li>
+        <li>Build and display your personalised daily routine</li>
+        <li>Track your grooming streak and completed routines</li>
+        <li>Remember your saved tips across app sessions</li>
+        <li>Determine which features are available (free vs Pro)</li>
+      </ul>
+      <p>We do <strong>not</strong> use your data for profiling, behavioural tracking, selling to third parties, or any purpose other than making the app work better for you.</p>
+    </div>
+  </div>
+
+  <!-- 7. Third parties -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🤝</div>
+      <div class="section-title">7. Third-Party Services</div>
+    </div>
+    <div class="section-body">
+      <p>Swarup uses the following third-party services. Each has its own privacy policy:</p>
+
+      <div class="two-col">
+        <div class="col-card">
+          <div class="col-card-title">Google AdMob</div>
+          In-app advertising (free tier only). May collect device identifiers with consent.
+          <br><br><a href="https://policies.google.com/privacy" style="color:var(--gold);font-size:12px" target="_blank">Privacy Policy →</a>
+        </div>
+        <div class="col-card">
+          <div class="col-card-title">Apple StoreKit</div>
+          Subscription billing for Swarup Pro. No payment data shared with us.
+          <br><br><a href="https://www.apple.com/legal/privacy/" style="color:var(--gold);font-size:12px" target="_blank">Privacy Policy →</a>
+        </div>
+      </div>
+
+      <p style="margin-top:14px">We do <strong>not</strong> use any analytics SDK (Firebase Analytics, Mixpanel, etc.), crash reporting tool, or any other third-party data collection service beyond those listed above.</p>
+    </div>
+  </div>
+
+  <!-- 8. Children -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <div class="section-title">8. Children's Privacy</div>
+    </div>
+    <div class="section-body">
+      <p>Swarup is rated <strong>4+</strong> on the App Store and is suitable for all ages. However, certain content (makeup tips, skin care advice) is most relevant to users aged 13 and above.</p>
+      <p>We do not knowingly collect any personal information from children under 13. Since no account or login is required and all data stays on-device, there is minimal privacy risk for younger users.</p>
+      <p>If you are a parent or guardian and believe your child has provided personal information through the app, please contact us at <a href="mailto:privacy@swarup.app" style="color:var(--gold)">privacy@swarup.app</a> and we will address it promptly.</p>
+    </div>
+  </div>
+
+  <!-- 9. Your rights -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <div class="section-title">9. Your Rights & Choices</div>
+    </div>
+    <div class="section-body">
+      <p>Since all data is stored locally on your device, you have full control:</p>
+
+      <ul>
+        <li><strong>Delete all data:</strong> Uninstall Swarup from your device. All locally stored preferences, routines, and history are permanently deleted.</li>
+        <li><strong>Reset preferences:</strong> Go to Profile → Preferences → Edit and change any of your grooming profile settings at any time.</li>
+        <li><strong>Opt out of personalised ads:</strong> iOS Settings → Privacy & Security → Tracking → disable tracking for Swarup. Or upgrade to Swarup Pro for a completely ad-free experience.</li>
+        <li><strong>Manage subscription:</strong> iOS Settings → Your Apple ID → Subscriptions → Swarup Pro.</li>
+        <li><strong>Data portability:</strong> Your data is stored in Apple's SwiftData format on your device. You may export it via iCloud backup.</li>
+      </ul>
+
+      <p>As an Indian user, you are also protected under the <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong>. Since we store no personal data on our servers, your rights under DPDP are primarily exercised through your device and Apple's platform.</p>
+    </div>
+  </div>
+
+  <!-- 10. Data security -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <div class="section-title">10. Data Security</div>
+    </div>
+    <div class="section-body">
+      <p>Because Swarup stores data only on your device, security depends primarily on your device's security settings. We recommend:</p>
+      <ul>
+        <li>Keeping your iPhone updated to the latest iOS version</li>
+        <li>Using Face ID, Touch ID, or a passcode to lock your device</li>
+        <li>Keeping iCloud Keychain and device encryption enabled (on by default on iPhone)</li>
+      </ul>
+      <p>Swarup does not transmit your personal preference data over the internet, which means there is no risk of a server-side data breach exposing your grooming profile.</p>
+    </div>
+  </div>
+
+  <!-- 11. Changes -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <div class="section-title">11. Changes to This Policy</div>
+    </div>
+    <div class="section-body">
+      <p>We may update this Privacy Policy from time to time. When we do:</p>
+      <ul>
+        <li>The "Effective Date" at the top of this page will be updated</li>
+        <li>Significant changes will be communicated via an in-app notice on next app open</li>
+        <li>You can always find the latest version at this URL</li>
+      </ul>
+      <p>Continuing to use Swarup after a policy update constitutes your acceptance of the revised policy. If you disagree with any changes, you may delete the app at any time.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-block">
+    <h3>Questions? Hum yahan hain.</h3>
+    <p>If you have any questions about this Privacy Policy or how Swarup handles your data, please reach out — we typically respond within 48 hours.</p>
+    <a class="contact-link" href="mailto:privacy@swarup.app">privacy@swarup.app</a>
+  </div>
+
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <p>© 2026 Swarup. Made with ❤️ in India.</p>
+  <p style="margin-top:6px">
+    <a href="mailto:privacy@swarup.app">privacy@swarup.app</a>
+    &nbsp;·&nbsp;
+    <a href="#">Terms of Use</a>
+    &nbsp;·&nbsp;
+    <a href="#">App Store</a>
+  </p>
+  <p style="margin-top:10px; font-size:11px; opacity:0.6">
+    This policy is written in plain language. The legal framework references the Digital Personal Data Protection Act, 2023 (India) and Apple App Store Review Guidelines.
+  </p>
+</footer>
+
+</body>
+</html>
