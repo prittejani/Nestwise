@@ -1,517 +1,597 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Swarup</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Nestwise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <style>
-    :root {
-      --gold:       #C47A2A;
-      --dark-amber: #8B4513;
-      --deep:       #3D1F00;
-      --bg:         #F7EDD8;
-      --card:       #ffffff;
-      --text:       #3D1F00;
-      --muted:      #8B6840;
-      --border:     rgba(196,122,42,0.18);
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #6C63FF;
+      --accent-light: #EEEDFF;
+      --text-primary: #0A0A0B;
+      --text-secondary: #5A5A6A;
+      --text-tertiary: #9898AA;
+      --bg: #F7F7FB;
+      --surface: #FFFFFF;
+      --border: rgba(108, 99, 255, 0.12);
+    }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      font-size: 16px;
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
     }
 
-    /* ── Header ── */
     header {
-      background: var(--deep);
-      padding: 48px 24px 40px;
-      text-align: center;
-    }
-    .logo {
-      font-size: 44px;
-      margin-bottom: 10px;
-    }
-    .app-name {
-      font-size: 28px;
-      font-weight: 600;
-      color: #F5D78E;
-      letter-spacing: -0.3px;
-    }
-    .app-tagline {
-      font-size: 14px;
-      color: rgba(245,215,142,0.6);
-      margin-top: 4px;
-    }
-    .policy-badge {
-      display: inline-block;
-      margin-top: 18px;
-      background: rgba(196,122,42,0.2);
-      border: 1px solid rgba(196,122,42,0.35);
-      color: #F5D78E;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 16px;
-      border-radius: 20px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
     }
 
-    /* ── Layout ── */
-    .container {
+    .header-inner {
       max-width: 720px;
       margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    /* ── Meta bar ── */
-    .meta-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 36px;
-    }
-    .meta-pill {
-      font-size: 12px;
-      color: var(--muted);
-      background: rgba(139,69,19,0.07);
-      border: 0.5px solid var(--border);
-      padding: 5px 13px;
-      border-radius: 20px;
-    }
-
-    /* ── Highlight box ── */
-    .highlight {
-      background: rgba(196,122,42,0.07);
-      border-left: 3px solid var(--gold);
-      border-radius: 0 10px 10px 0;
-      padding: 16px 20px;
-      margin-bottom: 36px;
-      font-size: 14px;
-      color: var(--dark-amber);
-      line-height: 1.7;
-    }
-    .highlight strong { color: var(--gold); }
-
-    /* ── Section cards ── */
-    .section {
-      background: var(--card);
-      border: 0.5px solid var(--border);
-      border-radius: 16px;
-      margin-bottom: 16px;
-      overflow: hidden;
-    }
-    .section-header {
+      padding: 0 24px;
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 18px 22px 16px;
-      border-bottom: 0.5px solid var(--border);
-      background: rgba(247,237,216,0.5);
     }
-    .section-icon {
-      font-size: 22px;
+
+    .logo-mark {
       width: 36px;
       height: 36px;
+      background: var(--accent);
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(196,122,42,0.1);
-      border-radius: 9px;
+    }
+
+    .logo-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .logo-text {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--text-primary);
+      letter-spacing: -0.3px;
+    }
+
+    .badge {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 4px 10px;
+      border-radius: 99px;
+      letter-spacing: 0.02em;
+    }
+
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 64px 24px 48px;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .privacy-card {
+      max-width: 720px;
+      margin: 0 auto 12px;
+      padding: 0 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--accent-light) 0%, transparent 100%);
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
     }
-    .section-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--deep);
-    }
-    .section-body {
-      padding: 18px 22px 20px;
-      font-size: 14px;
-      color: #5A3A1A;
-    }
-    .section-body p { margin-bottom: 12px; }
-    .section-body p:last-child { margin-bottom: 0; }
-    .section-body ul {
-      padding-left: 18px;
-      margin: 8px 0 12px;
-    }
-    .section-body li { margin-bottom: 6px; }
-    .section-body strong { color: var(--deep); font-weight: 600; }
 
-    /* ── Tag rows ── */
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 10px;
+    .card-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
     }
-    .tag {
+
+    .card-header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 18px;
+      color: var(--text-primary);
+      letter-spacing: -0.2px;
+    }
+
+    .card-body {
+      padding: 24px;
+    }
+
+    .card-body p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      line-height: 1.75;
+    }
+
+    .card-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .card-body ul li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .card-body ul li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .highlight-box {
+      background: var(--accent-light);
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 16px;
+    }
+
+    .highlight-box p {
+      font-size: 13px !important;
+      color: #3C3489 !important;
+      margin: 0 !important;
+      font-weight: 500;
+    }
+
+    .on-device-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #EAF3DE;
+      color: #27500A;
       font-size: 12px;
       font-weight: 500;
-      padding: 4px 12px;
-      border-radius: 20px;
-      border: 0.5px solid var(--border);
-      background: rgba(196,122,42,0.06);
-      color: var(--dark-amber);
-    }
-    .tag.no {
-      background: rgba(40,160,80,0.07);
-      border-color: rgba(40,160,80,0.2);
-      color: #1A7A40;
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 14px;
     }
 
-    /* ── Two-col grid ── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 10px;
+    .on-device-pill svg {
+      width: 12px;
+      height: 12px;
+      fill: #27500A;
     }
-    @media (max-width: 480px) { .two-col { grid-template-columns: 1fr; } }
-    .col-card {
-      background: rgba(247,237,216,0.6);
-      border: 0.5px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-size: 13px;
-      color: var(--dark-amber);
-    }
-    .col-card-title { font-weight: 600; color: var(--deep); margin-bottom: 4px; font-size: 13px; }
 
-    /* ── Contact block ── */
-    .contact-block {
-      background: var(--deep);
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 28px 24px;
+      padding: 32px 24px;
       text-align: center;
-      margin-top: 32px;
+      margin-bottom: 16px;
     }
-    .contact-block h3 { font-size: 18px; color: #F5D78E; margin-bottom: 8px; }
-    .contact-block p  { font-size: 13px; color: rgba(245,215,142,0.65); margin-bottom: 14px; }
-    .contact-link {
-      display: inline-block;
-      background: var(--gold);
-      color: #fff;
+
+    .contact-card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .contact-card p {
       font-size: 14px;
-      font-weight: 600;
-      padding: 10px 24px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 12px 28px;
       border-radius: 10px;
       text-decoration: none;
+      transition: opacity 0.15s;
     }
-    .contact-link:hover { opacity: 0.88; }
 
-    /* ── Footer ── */
+    .contact-card a:hover {
+      opacity: 0.85;
+    }
+
+    .email-text {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
     footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 24px 48px;
       text-align: center;
-      padding: 32px 24px;
-      border-top: 0.5px solid var(--border);
       font-size: 12px;
-      color: var(--muted);
+      color: var(--text-tertiary);
+      line-height: 1.8;
     }
-    footer a { color: var(--gold); text-decoration: none; }
 
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .app-name { font-size: 22px; }
-      .container { padding: 28px 16px 60px; }
-      .section-body { padding: 14px 16px 16px; }
-      .section-header { padding: 14px 16px 12px; }
+    footer strong {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .card-body {
+        padding: 18px;
+      }
+
+      .hero {
+        padding: 40px 20px 32px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ══════════════ HEADER ══════════════ -->
-<header>
-  <div class="logo">🪞</div>
-  <div class="app-name">Swarup</div>
-  <div class="app-tagline">Apna best version</div>
-  <span class="policy-badge">Privacy Policy</span>
-</header>
-
-<!-- ══════════════ BODY ══════════════ -->
-<div class="container">
-
-  <!-- Meta pills -->
-  <div class="meta-bar">
-    <span class="meta-pill">📅 Effective: March 19, 2026</span>
-    <span class="meta-pill">📱 Platform: iOS</span>
-    <span class="meta-pill">🌍 Audience: India</span>
-    <span class="meta-pill">🔤 Language: English / Hinglish</span>
-  </div>
-
-  <!-- TL;DR highlight -->
-  <div class="highlight">
-    <strong>Simple version (TL;DR):</strong> Swarup collects only the grooming preferences you give us during onboarding (gender, skin type, hair type, etc.). All data stays on your device. We never sell your data, never track you across other apps, and you can delete everything at any time.
-  </div>
-
-
-  <!-- 1. Who we are -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">👤</div>
-      <div class="section-title">1. Who We Are</div>
-    </div>
-    <div class="section-body">
-      <p><strong>Swarup</strong> is an Indian grooming and lifestyle app for iOS, built to help men and women discover personalized grooming routines, style tips, and self-care guidance in Hinglish.</p>
-      <p>This Privacy Policy explains what information we collect, how we use it, and your rights around it. By using Swarup, you agree to the practices described in this policy.</p>
-      <p><strong>Developer:</strong> Prit (Individual Developer)<br>
-         <strong>Contact:</strong> <a href="mailto:privacy@swarup.app" style="color:var(--gold)">privacy@swarup.app</a><br>
-         <strong>App:</strong> Swarup — available on Apple App Store</p>
-    </div>
-  </div>
-
-  <!-- 2. What data we collect -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">📋</div>
-      <div class="section-title">2. What Data We Collect</div>
-    </div>
-    <div class="section-body">
-      <p>Swarup collects <strong>only the information you voluntarily provide</strong> during onboarding to personalise your experience. No account or login is required.</p>
-
-      <p><strong>Onboarding preferences (stored locally on your device):</strong></p>
-      <ul>
-        <li>Gender (Man / Woman)</li>
-        <li>Age group (e.g. 18–25, 26–35)</li>
-        <li>Skin tone (Fair / Wheatish / Dusky / Deep)</li>
-        <li>Face shape (Oval / Round / Square / Heart / Oblong)</li>
-        <li>Skin type (Oily / Dry / Combination / Normal / Sensitive)</li>
-        <li>Hair type (Straight / Wavy / Curly / Thick / Fine)</li>
-      </ul>
-
-      <p><strong>App usage data (stored locally on your device):</strong></p>
-      <ul>
-        <li>Daily grooming routine completion status</li>
-        <li>Streak count and last active date</li>
-        <li>Tips saved / bookmarked by you</li>
-        <li>In-app purchase status (Swarup Pro)</li>
-      </ul>
-
-      <div class="tag-row">
-        <span class="tag no">✓ No email required</span>
-        <span class="tag no">✓ No phone number</span>
-        <span class="tag no">✓ No real name</span>
-        <span class="tag no">✓ No location data</span>
-        <span class="tag no">✓ No camera access</span>
-        <span class="tag no">✓ No contacts access</span>
+  <header>
+    <div class="header-inner">
+      <div>
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M12 2C8 2 5 5 5 9c0 2.5 1.2 4.7 3 6.1V17h8v-1.9c1.8-1.4 3-3.6 3-6.1 0-4-3-7-7-7zm-1 13v2h2v-2h-1zm1-3c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" />
+        </svg>
       </div>
+      <span class="logo-text">Nestwise</span>
+      <span class="badge">Privacy Policy</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <p class="hero-label">Legal &amp; Privacy</p>
+    <h1>Your privacy is<br>our foundation</h1>
+    <div class="hero-meta">
+      <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9898AA" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+        Effective: April 12, 2026
+      </span>
+      <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9898AA" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="8" x2="12" y2="12" />
+          <line x1="12" y1="16" x2="12.01" y2="16" />
+        </svg>
+        Applies to Nestwise iOS App
+      </span>
     </div>
   </div>
 
-  <!-- 3. Where data lives -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">💾</div>
-      <div class="section-title">3. Where Your Data Lives</div>
-    </div>
-    <div class="section-body">
-      <p>All personal preferences and usage data are stored <strong>exclusively on your device</strong> using Apple's SwiftData framework (local on-device storage). This data is:</p>
-      <ul>
-        <li>Never uploaded to any server owned by Swarup</li>
-        <li>Automatically included in your device's iCloud backup if you have iCloud enabled (this is an Apple feature — Swarup does not control it)</li>
-        <li>Deleted permanently when you delete the app</li>
-      </ul>
+  <div class="privacy-card">
 
-      <div class="two-col">
-        <div class="col-card">
-          <div class="col-card-title">📱 On your device</div>
-          All your profile preferences, routine history, saved tips
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 1L3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4z" />
+          </svg>
         </div>
-        <div class="col-card">
-          <div class="col-card-title">☁️ iCloud (if enabled)</div>
-          Standard device backup — controlled by Apple, not Swarup
+        <h2>The short version</h2>
+      </div>
+      <div class="card-body">
+        <div class="on-device-pill">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+          On-device AI — nothing leaves your phone
+        </div>
+        <p>Nestwise is built on a simple promise: your parenting conversations are yours. We do not collect, store, or
+          transmit your chat messages, your child's name, or any personal data to our servers — because we don't have
+          any servers involved in AI processing.</p>
+        <div class="highlight-box">
+          <p>All AI in Nestwise runs locally on your device using Apple Intelligence. Your data never touches the
+            internet for AI purposes.</p>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- 4. Advertising -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">📢</div>
-      <div class="section-title">4. Advertising (Google AdMob)</div>
-    </div>
-    <div class="section-body">
-      <p>The <strong>free version</strong> of Swarup displays ads powered by <strong>Google AdMob</strong>. AdMob may collect certain data to serve relevant ads. This data is collected and processed by Google, not by Swarup.</p>
-
-      <p><strong>What AdMob may collect:</strong></p>
-      <ul>
-        <li>Device advertising identifier (IDFA) — only with your consent via Apple's App Tracking Transparency prompt</li>
-        <li>IP address (approximate location for ad targeting)</li>
-        <li>App interaction data (ad views, clicks)</li>
-        <li>Device type and OS version</li>
-      </ul>
-
-      <p><strong>Important notes:</strong></p>
-      <ul>
-        <li>We <strong>never share</strong> your grooming profile data (skin type, hair type, etc.) with Google AdMob</li>
-        <li>Ads are served based on general contextual signals, not your personal grooming data</li>
-        <li>You can opt out of personalised ads in iOS Settings → Privacy → Apple Advertising, or by upgrading to <strong>Swarup Pro</strong> (completely ad-free)</li>
-      </ul>
-
-      <p>Google's Privacy Policy: <a href="https://policies.google.com/privacy" style="color:var(--gold)" target="_blank">policies.google.com/privacy</a></p>
-    </div>
-  </div>
-
-  <!-- 5. In-app purchases -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">💳</div>
-      <div class="section-title">5. In-App Purchases (Swarup Pro)</div>
-    </div>
-    <div class="section-body">
-      <p>Swarup Pro subscriptions are processed entirely through <strong>Apple's App Store</strong> using StoreKit. Swarup does not collect or store any payment information.</p>
-      <ul>
-        <li>All billing is handled by Apple — we never see your card details</li>
-        <li>We only receive a confirmation token from Apple confirming your purchase status</li>
-        <li>To manage or cancel your subscription: iOS Settings → Apple ID → Subscriptions</li>
-      </ul>
-      <p>Apple's App Store privacy practices: <a href="https://www.apple.com/legal/privacy/" style="color:var(--gold)" target="_blank">apple.com/legal/privacy</a></p>
-    </div>
-  </div>
-
-  <!-- 6. How we use data -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">🎯</div>
-      <div class="section-title">6. How We Use Your Data</div>
-    </div>
-    <div class="section-body">
-      <p>We use your on-device data for one purpose only — <strong>to personalise your Swarup experience</strong>:</p>
-      <ul>
-        <li>Show grooming tips relevant to your skin type, hair type, and gender</li>
-        <li>Build and display your personalised daily routine</li>
-        <li>Track your grooming streak and completed routines</li>
-        <li>Remember your saved tips across app sessions</li>
-        <li>Determine which features are available (free vs Pro)</li>
-      </ul>
-      <p>We do <strong>not</strong> use your data for profiling, behavioural tracking, selling to third parties, or any purpose other than making the app work better for you.</p>
-    </div>
-  </div>
-
-  <!-- 7. Third parties -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">🤝</div>
-      <div class="section-title">7. Third-Party Services</div>
-    </div>
-    <div class="section-body">
-      <p>Swarup uses the following third-party services. Each has its own privacy policy:</p>
-
-      <div class="two-col">
-        <div class="col-card">
-          <div class="col-card-title">Google AdMob</div>
-          In-app advertising (free tier only). May collect device identifiers with consent.
-          <br><br><a href="https://policies.google.com/privacy" style="color:var(--gold);font-size:12px" target="_blank">Privacy Policy →</a>
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
         </div>
-        <div class="col-card">
-          <div class="col-card-title">Apple StoreKit</div>
-          Subscription billing for Swarup Pro. No payment data shared with us.
-          <br><br><a href="https://www.apple.com/legal/privacy/" style="color:var(--gold);font-size:12px" target="_blank">Privacy Policy →</a>
+        <h2>Information we collect</h2>
+      </div>
+      <div class="card-body">
+        <p>Nestwise collects the absolute minimum needed to function.</p>
+        <ul>
+          <li>Your child's name and date of birth — stored locally on your device only, using Apple's SwiftData
+            framework</li>
+          <li>Milestone logs you mark — stored locally on your device only</li>
+          <li>App preferences such as theme and notification settings — stored locally via UserDefaults</li>
+          <li>Anonymous crash reports — only if you have opted in to Apple's crash reporting in iOS Settings</li>
+        </ul>
+        <p>We do <strong>not</strong> collect: your name, email, phone number, location, payment details, or any
+          information about your child beyond what you explicitly enter in the app.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z" />
+          </svg>
+        </div>
+        <h2>How your data is used</h2>
+      </div>
+      <div class="card-body">
+        <p>Data stored on your device is used solely to:</p>
+        <ul>
+          <li>Personalise AI responses with your child's name and age</li>
+          <li>Display milestone progress within the app</li>
+          <li>Remember your app preferences across sessions</li>
+        </ul>
+        <p>We never use your data for advertising, analytics profiling, or any purpose beyond making the app work for
+          you.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+          </svg>
+        </div>
+        <h2>Apple Intelligence &amp; on-device AI</h2>
+      </div>
+      <div class="card-body">
+        <p>Nestwise uses Apple Intelligence — Apple's on-device AI framework — to generate parenting advice. This means:
+        </p>
+        <ul>
+          <li>Your questions and conversations are processed entirely on your iPhone — they never leave your device</li>
+          <li>Apple Intelligence does not send your conversations to Apple's servers for AI processing</li>
+          <li>Nestwise cannot read or access the content of your AI conversations after they are displayed</li>
+          <li>Conversations are held in temporary memory and are not persisted to disk by Nestwise</li>
+        </ul>
+        <div class="highlight-box">
+          <p>Apple Intelligence operates under Apple's own privacy framework. For details on how Apple handles on-device
+            intelligence, visit apple.com/privacy.</p>
         </div>
       </div>
-
-      <p style="margin-top:14px">We do <strong>not</strong> use any analytics SDK (Firebase Analytics, Mixpanel, etc.), crash reporting tool, or any other third-party data collection service beyond those listed above.</p>
     </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg>
+        </div>
+        <h2>Third parties &amp; data sharing</h2>
+      </div>
+      <div class="card-body">
+        <p>Nestwise does not sell, trade, rent, or share your personal data with any third party.</p>
+        <ul>
+          <li>No advertising networks</li>
+          <li>No analytics platforms</li>
+          <li>No data brokers</li>
+          <li>No cloud AI providers</li>
+        </ul>
+        <p>The only third party involved in running this app is Apple — through the App Store distribution, Apple
+          Intelligence framework, and optional iCloud backup if enabled in your iOS settings. Apple's data practices are
+          governed by Apple's Privacy Policy.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M13 3a9 9 0 00-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.954 8.954 0 0013 21a9 9 0 000-18zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z" />
+          </svg>
+        </div>
+        <h2>Data retention &amp; deletion</h2>
+      </div>
+      <div class="card-body">
+        <p>Since all data is stored locally on your device, you are always in full control.</p>
+        <ul>
+          <li>Delete the app — all data is permanently removed from your device immediately</li>
+          <li>Use Settings → Reset All Data inside Nestwise to wipe all profiles and history without uninstalling</li>
+          <li>We cannot recover deleted data as we hold no copies</li>
+        </ul>
+        <p>If you use iCloud Backup on your device, iOS may back up local app data as part of your standard device
+          backup. This is controlled entirely by your iOS settings, not by Nestwise.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+          </svg>
+        </div>
+        <h2>Children's privacy (COPPA &amp; GDPR-K)</h2>
+      </div>
+      <div class="card-body">
+        <p>Nestwise is designed for parents and caregivers. The app is not directed at children and does not knowingly
+          collect personal information from children under 13 (US) or under 16 (UK/EU).</p>
+        <p>Information about your child — such as their name and date of birth — is entered by you as the parent and
+          stored only on your device. Nestwise does not transmit this information to any server.</p>
+        <p>If you believe a child has provided information to the app without parental consent, please contact us at <a
+            href="mailto:prittejani01@gmail.com"
+            style="color: var(--accent); text-decoration: none;">prittejani01@gmail.com</a> and we will assist in
+          deleting any relevant data.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+          </svg>
+        </div>
+        <h2>Your rights</h2>
+      </div>
+      <div class="card-body">
+        <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+        <ul>
+          <li>Right to access — know what data we hold about you</li>
+          <li>Right to deletion — request removal of your data</li>
+          <li>Right to portability — receive your data in a readable format</li>
+          <li>Right to correct — update inaccurate information</li>
+          <li>Right to object — opt out of any processing</li>
+        </ul>
+        <p>Since Nestwise stores all data locally on your device and holds no server-side copies, you can exercise all
+          of these rights directly by deleting data within the app or uninstalling it. For any additional requests,
+          email us at <a href="mailto:prittejani01@gmail.com"
+            style="color: var(--accent); text-decoration: none;">prittejani01@gmail.com</a>.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+          </svg>
+        </div>
+        <h2>Changes to this policy</h2>
+      </div>
+      <div class="card-body">
+        <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top
+          of this page and notify you via an in-app notice on the next launch.</p>
+        <p>Continued use of Nestwise after changes are posted constitutes acceptance of the updated policy. We encourage
+          you to review this policy periodically.</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h2>Questions or concerns?</h2>
+      <p>We're a small independent team and we take privacy seriously.<br>Reach out any time — we respond within 48
+        hours.</p>
+      <a href="mailto:prittejani01@gmail.com">Send us an email</a>
+      <span class="email-text">prittejani01@gmail.com</span>
+    </div>
+
   </div>
 
-  <!-- 8. Children -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">👶</div>
-      <div class="section-title">8. Children's Privacy</div>
-    </div>
-    <div class="section-body">
-      <p>Swarup is rated <strong>4+</strong> on the App Store and is suitable for all ages. However, certain content (makeup tips, skin care advice) is most relevant to users aged 13 and above.</p>
-      <p>We do not knowingly collect any personal information from children under 13. Since no account or login is required and all data stays on-device, there is minimal privacy risk for younger users.</p>
-      <p>If you are a parent or guardian and believe your child has provided personal information through the app, please contact us at <a href="mailto:privacy@swarup.app" style="color:var(--gold)">privacy@swarup.app</a> and we will address it promptly.</p>
-    </div>
-  </div>
-
-  <!-- 9. Your rights -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">⚖️</div>
-      <div class="section-title">9. Your Rights & Choices</div>
-    </div>
-    <div class="section-body">
-      <p>Since all data is stored locally on your device, you have full control:</p>
-
-      <ul>
-        <li><strong>Delete all data:</strong> Uninstall Swarup from your device. All locally stored preferences, routines, and history are permanently deleted.</li>
-        <li><strong>Reset preferences:</strong> Go to Profile → Preferences → Edit and change any of your grooming profile settings at any time.</li>
-        <li><strong>Opt out of personalised ads:</strong> iOS Settings → Privacy & Security → Tracking → disable tracking for Swarup. Or upgrade to Swarup Pro for a completely ad-free experience.</li>
-        <li><strong>Manage subscription:</strong> iOS Settings → Your Apple ID → Subscriptions → Swarup Pro.</li>
-        <li><strong>Data portability:</strong> Your data is stored in Apple's SwiftData format on your device. You may export it via iCloud backup.</li>
-      </ul>
-
-      <p>As an Indian user, you are also protected under the <strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong>. Since we store no personal data on our servers, your rights under DPDP are primarily exercised through your device and Apple's platform.</p>
-    </div>
-  </div>
-
-  <!-- 10. Data security -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">🔒</div>
-      <div class="section-title">10. Data Security</div>
-    </div>
-    <div class="section-body">
-      <p>Because Swarup stores data only on your device, security depends primarily on your device's security settings. We recommend:</p>
-      <ul>
-        <li>Keeping your iPhone updated to the latest iOS version</li>
-        <li>Using Face ID, Touch ID, or a passcode to lock your device</li>
-        <li>Keeping iCloud Keychain and device encryption enabled (on by default on iPhone)</li>
-      </ul>
-      <p>Swarup does not transmit your personal preference data over the internet, which means there is no risk of a server-side data breach exposing your grooming profile.</p>
-    </div>
-  </div>
-
-  <!-- 11. Changes -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon">📝</div>
-      <div class="section-title">11. Changes to This Policy</div>
-    </div>
-    <div class="section-body">
-      <p>We may update this Privacy Policy from time to time. When we do:</p>
-      <ul>
-        <li>The "Effective Date" at the top of this page will be updated</li>
-        <li>Significant changes will be communicated via an in-app notice on next app open</li>
-        <li>You can always find the latest version at this URL</li>
-      </ul>
-      <p>Continuing to use Swarup after a policy update constitutes your acceptance of the revised policy. If you disagree with any changes, you may delete the app at any time.</p>
-    </div>
-  </div>
-
-  <!-- Contact -->
-  <div class="contact-block">
-    <h3>Questions? Hum yahan hain.</h3>
-    <p>If you have any questions about this Privacy Policy or how Swarup handles your data, please reach out — we typically respond within 48 hours.</p>
-    <a class="contact-link" href="mailto:privacy@swarup.app">privacy@swarup.app</a>
-  </div>
-
-</div>
-
-<!-- ══════════════ FOOTER ══════════════ -->
-<footer>
-  <p>© 2026 Swarup. Made with ❤️ in India.</p>
-  <p style="margin-top:6px">
-    <a href="mailto:privacy@swarup.app">privacy@swarup.app</a>
-    &nbsp;·&nbsp;
-    <a href="#">Terms of Use</a>
-    &nbsp;·&nbsp;
-    <a href="#">App Store</a>
-  </p>
-  <p style="margin-top:10px; font-size:11px; opacity:0.6">
-    This policy is written in plain language. The legal framework references the Digital Personal Data Protection Act, 2023 (India) and Apple App Store Review Guidelines.
-  </p>
-</footer>
+  <footer>
+    <strong>Nestwise — AI Parenting Guide</strong><br>
+    © 2026 Nestwise. All rights reserved.<br>
+    Contact: <a href="mailto:prittejani01@gmail.com"
+      style="color: var(--text-tertiary);">prittejani01@gmail.com</a><br><br>
+    This app is not a substitute for professional medical advice.<br>
+    Always consult a qualified paediatrician for medical concerns.
+  </footer>
 
 </body>
+
 </html>
