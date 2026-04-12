@@ -250,6 +250,36 @@
       fill: #27500A;
     }
 
+    .law-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .law-pill {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    .law-pill .region {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+
+    .law-pill .law-name {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
     .contact-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -273,7 +303,7 @@
       line-height: 1.6;
     }
 
-    .contact-card a {
+    .contact-card a.btn {
       display: inline-block;
       background: var(--accent);
       color: white;
@@ -285,7 +315,7 @@
       transition: opacity 0.15s;
     }
 
-    .contact-card a:hover {
+    .contact-card a.btn:hover {
       opacity: 0.85;
     }
 
@@ -309,6 +339,10 @@
     footer strong {
       color: var(--text-secondary);
       font-weight: 500;
+    }
+
+    footer a {
+      color: var(--text-tertiary);
     }
 
     @media (max-width: 480px) {
@@ -339,7 +373,7 @@
   </header>
 
   <div class="hero">
-    <p class="hero-label">Legal &amp; Privacy</p>
+    <p class="hero-label">Legal &amp; Privacy — Worldwide</p>
     <h1>Your privacy is<br>our foundation</h1>
     <div class="hero-meta">
       <span>
@@ -354,16 +388,23 @@
       <span>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9898AA" stroke-width="2">
           <circle cx="12" cy="12" r="10" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12.01" y2="16" />
+          <path
+            d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
-        Applies to Nestwise iOS App
+        Applies Worldwide
+      </span>
+      <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9898AA" stroke-width="2">
+          <rect x="5" y="2" width="14" height="20" rx="2" />
+        </svg>
+        Nestwise iOS App
       </span>
     </div>
   </div>
 
   <div class="privacy-card">
 
+    <!-- Short Version -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -380,9 +421,11 @@
           </svg>
           On-device AI — nothing leaves your phone
         </div>
-        <p>Nestwise is built on a simple promise: your parenting conversations are yours. We do not collect, store, or
-          transmit your chat messages, your child's name, or any personal data to our servers — because we don't have
-          any servers involved in AI processing.</p>
+        <p>Nestwise is available worldwide and built on a simple promise: your parenting conversations are yours. We do
+          not collect, store, or transmit your chat messages, your child's name, or any personal data to our servers —
+          because we don't have any servers involved in AI processing.</p>
+        <p>This policy applies to all users globally. Where local law grants you additional rights, those rights apply
+          to you in full.</p>
         <div class="highlight-box">
           <p>All AI in Nestwise runs locally on your device using Apple Intelligence. Your data never touches the
             internet for AI purposes.</p>
@@ -390,6 +433,58 @@
       </div>
     </div>
 
+    <!-- Global Laws Coverage -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+          </svg>
+        </div>
+        <h2>Privacy laws we comply with</h2>
+      </div>
+      <div class="card-body">
+        <p>Nestwise is designed to comply with major privacy regulations worldwide. Because all data stays on your
+          device and we collect no personal information on our servers, we naturally satisfy the core requirements of
+          these frameworks:</p>
+        <div class="law-grid">
+          <div class="law-pill">
+            <div class="region">USA</div>
+            <div class="law-name">CCPA / COPPA</div>
+          </div>
+          <div class="law-pill">
+            <div class="region">Europe / UK</div>
+            <div class="law-name">GDPR / UK GDPR</div>
+          </div>
+          <div class="law-pill">
+            <div class="region">Canada</div>
+            <div class="law-name">PIPEDA / Law 25</div>
+          </div>
+          <div class="law-pill">
+            <div class="region">Australia</div>
+            <div class="law-name">Privacy Act 1988</div>
+          </div>
+          <div class="law-pill">
+            <div class="region">India</div>
+            <div class="law-name">DPDP Act 2023</div>
+          </div>
+          <div class="law-pill">
+            <div class="region">Brazil</div>
+            <div class="law-name">LGPD</div>
+          </div>
+          <div class="law-pill">
+            <div class="region">Japan</div>
+            <div class="law-name">APPI</div>
+          </div>
+          <div class="law-pill">
+            <div class="region">Singapore</div>
+            <div class="law-name">PDPA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Information We Collect -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -401,19 +496,23 @@
         <h2>Information we collect</h2>
       </div>
       <div class="card-body">
-        <p>Nestwise collects the absolute minimum needed to function.</p>
+        <p>Nestwise collects the absolute minimum needed to function. Everything is stored locally on your device only:
+        </p>
         <ul>
-          <li>Your child's name and date of birth — stored locally on your device only, using Apple's SwiftData
-            framework</li>
-          <li>Milestone logs you mark — stored locally on your device only</li>
+          <li>Your child's name and date of birth — stored on your device only via Apple's SwiftData framework</li>
+          <li>Milestone logs you mark — stored on your device only</li>
           <li>App preferences such as theme and notification settings — stored locally via UserDefaults</li>
-          <li>Anonymous crash reports — only if you have opted in to Apple's crash reporting in iOS Settings</li>
+          <li>Anonymous crash reports — only if you have opted in to Apple's crash reporting in your iOS Settings</li>
         </ul>
-        <p>We do <strong>not</strong> collect: your name, email, phone number, location, payment details, or any
-          information about your child beyond what you explicitly enter in the app.</p>
+        <p>We do <strong>not</strong> collect: your name, email address, phone number, IP address, device identifiers,
+          location, payment details, or any information about your child beyond what you explicitly enter.</p>
+        <div class="highlight-box">
+          <p>We have no user accounts, no registration, and no login. We literally cannot identify who you are.</p>
+        </div>
       </div>
     </div>
 
+    <!-- How Data Is Used -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -431,11 +530,13 @@
           <li>Display milestone progress within the app</li>
           <li>Remember your app preferences across sessions</li>
         </ul>
-        <p>We never use your data for advertising, analytics profiling, or any purpose beyond making the app work for
-          you.</p>
+        <p>We never use your data for advertising, profiling, behavioural tracking, or any purpose beyond making the app
+          work for you. There is no legal basis for processing because we do not process any data on our side — it all
+          stays on your device.</p>
       </div>
     </div>
 
+    <!-- Apple Intelligence -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -452,15 +553,16 @@
           <li>Your questions and conversations are processed entirely on your iPhone — they never leave your device</li>
           <li>Apple Intelligence does not send your conversations to Apple's servers for AI processing</li>
           <li>Nestwise cannot read or access the content of your AI conversations after they are displayed</li>
-          <li>Conversations are held in temporary memory and are not persisted to disk by Nestwise</li>
+          <li>Conversations are held in temporary memory only and are not persisted to disk by Nestwise</li>
         </ul>
         <div class="highlight-box">
-          <p>Apple Intelligence operates under Apple's own privacy framework. For details on how Apple handles on-device
-            intelligence, visit apple.com/privacy.</p>
+          <p>Apple Intelligence operates under Apple's own global privacy framework. For details visit
+            apple.com/privacy.</p>
         </div>
       </div>
     </div>
 
+    <!-- Third Parties -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -469,22 +571,24 @@
               d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
           </svg>
         </div>
-        <h2>Third parties &amp; data sharing</h2>
+        <h2>Third parties &amp; international transfers</h2>
       </div>
       <div class="card-body">
-        <p>Nestwise does not sell, trade, rent, or share your personal data with any third party.</p>
+        <p>Nestwise does not sell, trade, rent, or share your personal data with any third party anywhere in the world.
+        </p>
         <ul>
-          <li>No advertising networks</li>
-          <li>No analytics platforms</li>
-          <li>No data brokers</li>
-          <li>No cloud AI providers</li>
+          <li>No advertising or marketing networks</li>
+          <li>No analytics or tracking platforms</li>
+          <li>No data brokers or data aggregators</li>
+          <li>No cloud AI providers — all AI is on-device</li>
         </ul>
-        <p>The only third party involved in running this app is Apple — through the App Store distribution, Apple
-          Intelligence framework, and optional iCloud backup if enabled in your iOS settings. Apple's data practices are
-          governed by Apple's Privacy Policy.</p>
+        <p>Because no personal data leaves your device, there are no international data transfers to disclose under GDPR
+          Article 46, PIPEDA, or any equivalent regulation. The only third party involved is Apple — through App Store
+          distribution and the Apple Intelligence framework — governed by Apple's own global privacy policy.</p>
       </div>
     </div>
 
+    <!-- Data Retention -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -498,15 +602,17 @@
       <div class="card-body">
         <p>Since all data is stored locally on your device, you are always in full control.</p>
         <ul>
-          <li>Delete the app — all data is permanently removed from your device immediately</li>
+          <li>Delete the app — all data is permanently and immediately removed from your device</li>
           <li>Use Settings → Reset All Data inside Nestwise to wipe all profiles and history without uninstalling</li>
-          <li>We cannot recover deleted data as we hold no copies</li>
+          <li>We cannot recover deleted data as we hold no copies anywhere</li>
         </ul>
-        <p>If you use iCloud Backup on your device, iOS may back up local app data as part of your standard device
-          backup. This is controlled entirely by your iOS settings, not by Nestwise.</p>
+        <p>If you use iCloud Backup, iOS may back up local app data as part of your standard device backup. This is
+          controlled entirely by your iOS Settings, not by Nestwise. You can exclude Nestwise from iCloud Backup at any
+          time in iOS Settings → Apple ID → iCloud → Manage Storage.</p>
       </div>
     </div>
 
+    <!-- Children's Privacy -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -515,20 +621,26 @@
               d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
           </svg>
         </div>
-        <h2>Children's privacy (COPPA &amp; GDPR-K)</h2>
+        <h2>Children's privacy — worldwide</h2>
       </div>
       <div class="card-body">
-        <p>Nestwise is designed for parents and caregivers. The app is not directed at children and does not knowingly
-          collect personal information from children under 13 (US) or under 16 (UK/EU).</p>
-        <p>Information about your child — such as their name and date of birth — is entered by you as the parent and
-          stored only on your device. Nestwise does not transmit this information to any server.</p>
-        <p>If you believe a child has provided information to the app without parental consent, please contact us at <a
-            href="mailto:prittejani01@gmail.com"
-            style="color: var(--accent); text-decoration: none;">prittejani01@gmail.com</a> and we will assist in
-          deleting any relevant data.</p>
+        <p>Nestwise is designed for parents and caregivers. It is not directed at children. We comply with children's
+          privacy laws globally:</p>
+        <ul>
+          <li><strong>USA (COPPA):</strong> We do not knowingly collect personal data from children under 13</li>
+          <li><strong>UK / EU (GDPR-K):</strong> We do not knowingly collect personal data from children under 16</li>
+          <li><strong>Australia:</strong> We do not knowingly collect personal data from children under 15</li>
+          <li><strong>India (DPDP):</strong> We do not knowingly collect personal data from children under 18</li>
+          <li><strong>All other regions:</strong> We apply the most protective standard available locally</li>
+        </ul>
+        <p>Information about your child — their name and date of birth — is entered by you as the parent and stored only
+          on your device. It is never transmitted anywhere. If you believe a child has provided information without
+          parental consent, contact us immediately at <a href="mailto:prittejani01@gmail.com"
+            style="color: var(--accent); text-decoration: none;">prittejani01@gmail.com</a>.</p>
       </div>
     </div>
 
+    <!-- Your Rights -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -537,24 +649,53 @@
               d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
           </svg>
         </div>
-        <h2>Your rights</h2>
+        <h2>Your rights — all users worldwide</h2>
       </div>
       <div class="card-body">
-        <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+        <p>Regardless of where you live, you have the following rights:</p>
         <ul>
-          <li>Right to access — know what data we hold about you</li>
-          <li>Right to deletion — request removal of your data</li>
-          <li>Right to portability — receive your data in a readable format</li>
-          <li>Right to correct — update inaccurate information</li>
-          <li>Right to object — opt out of any processing</li>
+          <li><strong>Access:</strong> Know what data exists about you — in Nestwise, all data is visible directly in
+            the app</li>
+          <li><strong>Deletion:</strong> Delete all your data instantly via Settings → Reset All Data or by deleting the
+            app</li>
+          <li><strong>Portability:</strong> Your data is stored in Apple's SwiftData format on your own device — it
+            belongs to you</li>
+          <li><strong>Correction:</strong> Edit your child's profile at any time in the app settings</li>
+          <li><strong>Objection / Opt-out:</strong> Stop using the app and delete it — no further processing occurs</li>
+          <li><strong>Withdraw consent:</strong> Delete the app at any time with no consequences</li>
         </ul>
-        <p>Since Nestwise stores all data locally on your device and holds no server-side copies, you can exercise all
-          of these rights directly by deleting data within the app or uninstalling it. For any additional requests,
-          email us at <a href="mailto:prittejani01@gmail.com"
-            style="color: var(--accent); text-decoration: none;">prittejani01@gmail.com</a>.</p>
+        <p>Since we hold no data on any server, all rights are exercisable directly by you on your device. For any
+          additional requests or questions, email <a href="mailto:prittejani01@gmail.com"
+            style="color: var(--accent); text-decoration: none;">prittejani01@gmail.com</a> and we will respond within
+          30 days as required by applicable law.</p>
       </div>
     </div>
 
+    <!-- Security -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+          </svg>
+        </div>
+        <h2>Security</h2>
+      </div>
+      <div class="card-body">
+        <p>Your data security is handled by Apple's built-in device protection:</p>
+        <ul>
+          <li>All local data is protected by iOS device encryption — secured by your Face ID, Touch ID, or passcode</li>
+          <li>SwiftData storage is sandboxed — no other app on your device can access Nestwise data</li>
+          <li>We use no network connections for AI — eliminating the most common vector for data breaches</li>
+          <li>We follow Apple's App Store security guidelines and best practices for iOS development</li>
+        </ul>
+        <p>In the unlikely event of a security issue affecting our app code, we will notify users via an app update and
+          post-release notes as quickly as possible.</p>
+      </div>
+    </div>
+
+    <!-- Changes -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -566,18 +707,24 @@
         <h2>Changes to this policy</h2>
       </div>
       <div class="card-body">
-        <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top
-          of this page and notify you via an in-app notice on the next launch.</p>
-        <p>Continued use of Nestwise after changes are posted constitutes acceptance of the updated policy. We encourage
-          you to review this policy periodically.</p>
+        <p>We may update this Privacy Policy from time to time to reflect changes in law or app functionality. When we
+          do:</p>
+        <ul>
+          <li>The effective date at the top of this page will be updated</li>
+          <li>You will be notified via an in-app notice on the next launch for material changes</li>
+          <li>For significant changes affecting your rights, we will provide 30 days notice where required by law</li>
+        </ul>
+        <p>Continued use of Nestwise after changes are posted constitutes acceptance of the updated policy. You can
+          always find the latest version of this policy at the URL provided in the App Store listing.</p>
       </div>
     </div>
 
+    <!-- Contact -->
     <div class="contact-card">
       <h2>Questions or concerns?</h2>
-      <p>We're a small independent team and we take privacy seriously.<br>Reach out any time — we respond within 48
-        hours.</p>
-      <a href="mailto:prittejani01@gmail.com">Send us an email</a>
+      <p>We're an independent developer and we take privacy seriously.<br>We respond to all privacy requests within 30
+        days as required by applicable law.</p>
+      <a href="mailto:prittejani01@gmail.com" class="btn">Send us an email</a>
       <span class="email-text">prittejani01@gmail.com</span>
     </div>
 
@@ -586,10 +733,10 @@
   <footer>
     <strong>Nestwise — AI Parenting Guide</strong><br>
     © 2026 Nestwise. All rights reserved.<br>
-    Contact: <a href="mailto:prittejani01@gmail.com"
-      style="color: var(--text-tertiary);">prittejani01@gmail.com</a><br><br>
+    Available worldwide on the Apple App Store.<br>
+    Contact: <a href="mailto:prittejani01@gmail.com">prittejani01@gmail.com</a><br><br>
     This app is not a substitute for professional medical advice.<br>
-    Always consult a qualified paediatrician for medical concerns.
+    Always consult a qualified paediatrician or healthcare provider for medical concerns.
   </footer>
 
 </body>
