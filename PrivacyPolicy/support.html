@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support – NestWise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #6C63FF;
+    --accent-light: #EEEDFF;
+    --accent-dark: #3C3489;
+    --text-primary: #0A0A0B;
+    --text-secondary: #5A5A6A;
+    --text-tertiary: #9898AA;
+    --bg: #F7F7FB;
+    --surface: #FFFFFF;
+    --border: rgba(108,99,255,0.12);
+    --border-gray: rgba(0,0,0,0.08);
+    --green: #639922;
+    --green-light: #EAF3DE;
+    --orange: #BA7517;
+    --orange-light: #FAEEDA;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Header ── */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-mark {
+    width: 34px; height: 34px;
+    background: var(--accent);
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-mark svg { width: 18px; height: 18px; fill: #fff; }
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+  }
+  .header-badge {
+    margin-left: auto;
+    font-size: 11px; font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 4px 10px;
+    border-radius: 99px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 40px;
+  }
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+  }
+  .hero p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* ── Contact card ── */
+  .contact-strip {
+    max-width: 760px;
+    margin: 0 auto 12px;
+    padding: 0 24px;
+  }
+  .contact-card {
+    background: var(--accent);
+    border-radius: 16px;
+    padding: 28px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .contact-card-left h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .contact-card-left p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px 22px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+  .contact-btn:hover { opacity: 0.88; text-decoration: none; }
+  .contact-btn svg { width: 15px; height: 15px; fill: var(--accent); }
+
+  /* ── Main layout ── */
+  .main-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  /* ── Section label ── */
+  .section-label {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin: 32px 0 12px;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border-gray);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  /* ── FAQ accordion ── */
+  .faq-item { border-bottom: 1px solid var(--border-gray); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    width: 100%; background: none; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px;
+    padding: 18px 22px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+  .faq-q:hover { background: #F7F7FB; }
+  .faq-icon {
+    width: 22px; height: 22px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--accent-light);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .faq-icon svg { width: 10px; height: 10px; fill: var(--accent); transition: transform 0.2s; }
+  .faq-item.open .faq-icon { background: var(--accent); }
+  .faq-item.open .faq-icon svg { fill: #fff; transform: rotate(45deg); }
+  .faq-a {
+    display: none;
+    padding: 0 22px 18px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── Requirements card ── */
+  .req-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 20px;
+  }
+  .req-item {
+    background: var(--bg);
+    border: 1px solid var(--border-gray);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .req-label { font-size: 11px; color: var(--text-tertiary); margin-bottom: 4px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+  .req-value { font-size: 14px; font-weight: 500; color: var(--text-primary); }
+
+  /* ── Steps ── */
+  .steps { padding: 20px 22px; display: flex; flex-direction: column; gap: 16px; }
+  .step { display: flex; gap: 14px; align-items: flex-start; }
+  .step-num {
+    width: 26px; height: 26px; flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 13px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+  .step-content h4 { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+  .step-content p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+  /* ── Info rows ── */
+  .info-rows { padding: 4px 0; }
+  .info-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--border-gray);
+  }
+  .info-row:last-child { border-bottom: none; }
+  .info-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+  .dot-green { background: var(--green); }
+  .dot-amber { background: var(--orange); }
+  .dot-purple { background: var(--accent); }
+  .info-row-right h4 { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+  .info-row-right p { font-size: 13px; color: var(--text-secondary); line-height: 1.55; }
+
+  /* ── Alert box ── */
+  .alert-box {
+    background: var(--orange-light);
+    border: 1px solid #FAC775;
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-size: 13px;
+    color: #633806;
+    line-height: 1.6;
+    margin: 14px 22px 20px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    line-height: 1.9;
+    padding: 32px 24px 48px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  footer strong { color: var(--text-secondary); font-weight: 500; }
+
+  @media (max-width: 520px) {
+    .contact-card { flex-direction: column; align-items: flex-start; }
+    .req-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 2.5 1.2 4.7 3 6.1V17h8v-1.9c1.8-1.4 3-3.6 3-6.1 0-4-3-7-7-7zm-1 13v2h2v-2h-1zm1-3c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+    </div>
+    <span class="logo-text">NestWise</span>
+    <span class="header-badge">Support</span>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <p class="hero-eyebrow">Help & Support</p>
+  <h1>We're here to help</h1>
+  <p>Find answers to common questions or get in touch — we respond to every email within 48 hours.</p>
+</div>
+
+<!-- Contact card -->
+<div class="contact-strip">
+  <div class="contact-card">
+    <div class="contact-card-left">
+      <h2>Still need help?</h2>
+      <p>Email us at prittejani01@gmail.com — responses within 48 hours</p>
+    </div>
+    <a href="mailto:prittejani01@gmail.com?subject=NestWise%20Support" class="contact-btn">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      Send email
+    </a>
+  </div>
+</div>
+
+<!-- Main content -->
+<div class="main-wrap">
+
+  <!-- Device requirements -->
+  <p class="section-label">Device requirements</p>
+  <div class="card">
+    <div class="req-grid">
+      <div class="req-item">
+        <div class="req-label">iPhone model</div>
+        <div class="req-value">iPhone 15 Pro or newer</div>
+      </div>
+      <div class="req-item">
+        <div class="req-label">iOS version</div>
+        <div class="req-value">iOS 18.1 or later</div>
+      </div>
+      <div class="req-item">
+        <div class="req-label">Apple Intelligence</div>
+        <div class="req-value">Must be enabled</div>
+      </div>
+      <div class="req-item">
+        <div class="req-label">Language</div>
+        <div class="req-value">English (US or UK)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <p class="section-label">Frequently asked questions</p>
+  <div class="card">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        The AI chat isn't responding — what should I do?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        NestWise uses Apple Intelligence, which runs entirely on your device. If the chat isn't responding, check the following:<br><br>
+        1. Go to <strong>Settings → Apple Intelligence &amp; Siri</strong> and confirm Apple Intelligence is turned ON.<br>
+        2. If you see "Setting up…" or "Preparing…", the AI model is still downloading — this can take 20–40 minutes on Wi-Fi while your iPhone is charging.<br>
+        3. Make sure your iPhone language is set to <strong>English (United States)</strong> or <strong>English (United Kingdom)</strong> in Settings → General → Language &amp; Region.<br>
+        4. Restart the app and try again once setup is complete.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Is my data sent to any server or stored in the cloud?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        No. NestWise processes all AI responses entirely on your iPhone using Apple Intelligence — your questions never leave your device. Your child's profile and milestones are stored locally using Apple's SwiftData framework. We have no servers involved in AI processing and do not collect any personal data.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        My iPhone 15 (standard) isn't working with NestWise — why?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        Apple Intelligence is only available on iPhone 15 <strong>Pro</strong>, iPhone 15 <strong>Pro Max</strong>, and all iPhone 16 models. The standard iPhone 15 and iPhone 15 Plus do not support Apple Intelligence due to hardware limitations set by Apple. NestWise requires Apple Intelligence to power its AI features.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How do I set up Apple Intelligence for the first time?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        Follow these steps in order:<br><br>
+        1. <strong>Settings → General → Language &amp; Region</strong> → set iPhone Language to English (US or UK)<br>
+        2. <strong>Settings → Apple Intelligence &amp; Siri</strong> → tap "Turn On Apple Intelligence"<br>
+        3. Connect to Wi-Fi and plug in your iPhone to charge<br>
+        4. Wait for the model to download — check progress at <strong>Settings → General → iPhone Storage → Intelligence</strong><br>
+        5. Once you see "Apple Intelligence is ready", open NestWise and start chatting
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How do I delete my data or my child's profile?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        You can delete individual child profiles from the app's Settings screen. To remove all data completely, simply delete the NestWise app from your iPhone — this permanently removes all locally stored data. Since we hold no server-side copies, there is nothing else to delete on our end.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        The AI gives inaccurate or unexpected answers — is this normal?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        AI responses are generated automatically and may not always be accurate. NestWise is designed to support and inform parents, not to replace professional medical advice. For any health concerns about your child, please consult a qualified paediatrician or healthcare provider. If you receive a response that seems clearly wrong or harmful, please email us so we can improve the app.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        The conversation resets mid-chat — is this a bug?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        This is expected behaviour, not a bug. Apple Intelligence has a context window limit — when a conversation becomes very long, the session automatically resets so you can keep chatting. The app will show a message letting you know this has happened. You can continue asking new questions normally after a reset.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Can I use NestWise on iPad or older iPhone models?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        Currently NestWise supports iPhone 15 Pro / Pro Max and all iPhone 16 models running iOS 18.1 or later. iPad support and older device compatibility may be added in a future update depending on Apple Intelligence availability on those devices.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How do I report a bug or send feedback?
+        <span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span>
+      </button>
+      <div class="faq-a">
+        Email us at <a href="mailto:prittejani01@gmail.com">prittejani01@gmail.com</a> with a description of the issue, your iPhone model, and iOS version. You can also rate us on the App Store — feedback helps us improve NestWise for every parent.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- How to enable Apple Intelligence -->
+  <p class="section-label">Enable Apple Intelligence — step by step</p>
+  <div class="card">
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Set language to English</h4>
+          <p>Settings → General → Language &amp; Region → iPhone Language → English (United States) or English (United Kingdom)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Enable Apple Intelligence</h4>
+          <p>Settings → Apple Intelligence &amp; Siri → Turn On Apple Intelligence</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Wait for the model to download</h4>
+          <p>Connect to Wi-Fi and keep your iPhone charging. The download takes 20–40 minutes. Track progress at Settings → General → iPhone Storage → Intelligence.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Confirm it's ready</h4>
+          <p>You'll see "Apple Intelligence is ready" in Settings. Open NestWise — the AI chat will now work fully.</p>
+        </div>
+      </div>
+    </div>
+    <div class="alert-box">
+      Apple Intelligence is only available on iPhone 15 Pro, iPhone 15 Pro Max, and all iPhone 16 models with iOS 18.1 or later.
+    </div>
+  </div>
+
+  <!-- Privacy summary -->
+  <p class="section-label">Privacy at a glance</p>
+  <div class="card">
+    <div class="info-rows">
+      <div class="info-row">
+        <div class="info-dot dot-green"></div>
+        <div class="info-row-right">
+          <h4>All AI runs on your device</h4>
+          <p>Your parenting questions are processed by Apple Intelligence locally — they never leave your iPhone.</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-dot dot-green"></div>
+        <div class="info-row-right">
+          <h4>No account required</h4>
+          <p>NestWise does not require you to create an account or provide an email address to use the app.</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-dot dot-green"></div>
+        <div class="info-row-right">
+          <h4>No data collected or sold</h4>
+          <p>We do not collect, store, share, or sell any personal data. Everything stays on your device.</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-dot dot-purple"></div>
+        <div class="info-row-right">
+          <h4>Full privacy policy</h4>
+          <p>Read our complete privacy policy at <a href="./privacy.html">nestwise privacy policy</a> — covering GDPR, COPPA, UK GDPR, and more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About the app -->
+  <p class="section-label">About NestWise</p>
+  <div class="card">
+    <div class="info-rows">
+      <div class="info-row">
+        <div class="info-dot dot-purple"></div>
+        <div class="info-row-right">
+          <h4>What is NestWise?</h4>
+          <p>NestWise is an AI parenting guide app that uses Apple Intelligence to answer your parenting questions privately and instantly — from newborn care to toddler development.</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-dot dot-purple"></div>
+        <div class="info-row-right">
+          <h4>Who is it for?</h4>
+          <p>Parents and caregivers of children from newborn to school age, looking for quick, personalised, evidence-informed parenting guidance without leaving their phone.</p>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-dot dot-amber"></div>
+        <div class="info-row-right">
+          <h4>Medical disclaimer</h4>
+          <p>NestWise is not a medical app and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified paediatrician or healthcare provider for medical concerns about your child.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <strong>NestWise — AI Parenting Guide</strong><br>
+  Built with Apple Intelligence · All AI runs on-device<br><br>
+  Support: <a href="mailto:prittejani01@gmail.com" style="color: var(--text-tertiary);">prittejani01@gmail.com</a> · 
+  <a href="./privacy.html" style="color: var(--text-tertiary);">Privacy Policy</a><br><br>
+  © 2026 NestWise. All rights reserved.<br>
+  NestWise is not affiliated with or endorsed by Apple Inc.
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+
+</body>
+</html>
