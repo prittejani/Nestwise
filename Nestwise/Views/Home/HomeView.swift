@@ -10,6 +10,7 @@ import SwiftData
 struct HomeView: View {
 
     @StateObject private var viewModel = HomeViewModel()
+    @StateObject private var healthKitManager = HealthKitManager.shared
     @EnvironmentObject private var coordinator: AppCoordinator
     @Environment(\.modelContext) private var context
 
@@ -25,6 +26,9 @@ struct HomeView: View {
                         childCard(child)
                         quickActionsSection(child)
                         milestoneProgressCard(child)
+                        if let sleepHours = healthKitManager.lastNightSleepHours {
+                            sleepCard(hours: sleepHours)
+                        }
                         tipOfDayCard
                     } else {
                         emptyState
@@ -44,6 +48,9 @@ struct HomeView: View {
                     NotificationManager.shared.requestPermission()
                     UserDefaults.standard.set(true, forKey: AppConstants.Keys.notificationsRequested)
                 }
+                
+                // Request HealthKit permissions
+                healthKitManager.requestAuthorization()
             }
         }
     }
@@ -188,6 +195,41 @@ struct HomeView: View {
         }
         .padding(16)
         .background(NWColors.accentLight, in: RoundedRectangle(cornerRadius: 16))
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    // MARK: - Sleep Card
+    private func sleepCard(hours: Double) -> some View {
+        VStack(spacing: 10) {
+            HStack(spacing: 6) {
+                Image(systemName: "moon.zzz.fill")
+                    .font(.system(size: 16))
+                    .foregroundStyle(.indigo)
+                
+                Text("Sleep Insight")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(.indigo)
+                    
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text("You slept \(String(format: "%.1f", hours))h last night")
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(NWColors.primaryText)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            let tip = hours < 6.0 
+                ? "Here's a tip for tired parents: Rest when you can, and don't hesitate to ask for help today. You're doing amazing."
+                : "Great job getting some rest! A well-rested parent is a more patient parent."
+                
+            Text(tip)
+                .font(.system(size: 14))
+                .foregroundStyle(NWColors.secondaryText)
+                .lineSpacing(3)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(16)
+        .background(Color.indigo.opacity(0.1), in: RoundedRectangle(cornerRadius: 16))
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 

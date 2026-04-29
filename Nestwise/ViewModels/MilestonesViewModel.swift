@@ -90,7 +90,8 @@ final class MilestonesViewModel: ObservableObject {
             let stream = aiService.stream(
                 instructions: AppConstants.systemPrompt(
                     childName: child.name,
-                    ageMonths: child.ageInMonths
+                    ageMonths: child.ageInMonths,
+                    sleepHours: HealthKitManager.shared.lastNightSleepHours
                 ),
                 userMessage: prompt
             )

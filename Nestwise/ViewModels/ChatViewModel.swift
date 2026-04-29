@@ -85,7 +85,11 @@ final class ChatViewModel: ObservableObject {
         streamingContent = ""
         errorMessage = nil
 
-        let instructions = AppConstants.systemPrompt(childName: childName, ageMonths: ageMonths)
+        let instructions = AppConstants.systemPrompt(
+            childName: childName, 
+            ageMonths: ageMonths,
+            sleepHours: HealthKitManager.shared.lastNightSleepHours
+        )
 
         streamingTask = Task {
             do {

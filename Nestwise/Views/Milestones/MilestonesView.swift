@@ -13,6 +13,7 @@ struct MilestonesView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
     @Environment(\.modelContext) private var context
     @State private var showCitations = false
+    @State private var pdfURLToShare: URL? = nil
     
     @Query private var children: [ChildProfile]
     @Query private var logs: [MilestoneLog]
@@ -68,6 +69,14 @@ struct MilestonesView: View {
             }
             .presentationDetents([.large])
         }
+        .sheet(isPresented: Binding<Bool>(
+            get: { pdfURLToShare != nil },
+            set: { if !$0 { pdfURLToShare = nil } }
+        )) {
+            if let url = pdfURLToShare {
+                ActivityViewController(activityItems: [url])
+            }
+        }
     }
 
     // MARK: - Main Content
@@ -76,6 +85,24 @@ struct MilestonesView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 20) {
                 progressHeader(for: child)
+                
+                // Export Button
+                Button {
+                    exportPDF(for: child)
+                } label: {
+                    HStack {
+                        Image(systemName: "doc.text.fill")
+                        Text("Export for doctor visit")
+                    }
+                    .font(.system(size: 15, weight: .semibold))
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(NWColors.accent)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+                }
+                .buttonStyle(.plain)
+                
                 ageGroupPicker(for: child)
                 categoryFilter
                 milestoneList(for: child)
@@ -100,6 +127,13 @@ struct MilestonesView: View {
             .padding(.bottom, 40)
         }
         .background(NWColors.background)
+    }
+    
+    private func exportPDF(for child: ChildProfile) {
+        let total = MilestoneCatalog.milestones(for: child.ageGroup).count
+        if let url = PDFGenerator.generateMilestoneReport(child: child, logs: logs, totalMilestones: total) {
+            pdfURLToShare = url
+        }
     }
 
     // MARK: - Progress Header

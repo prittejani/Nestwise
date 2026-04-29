@@ -30,8 +30,8 @@ enum AppConstants {
     }
 
     // MARK: - AI System Prompt
-    static func systemPrompt(childName: String, ageMonths: Int) -> String {
-        """
+    static func systemPrompt(childName: String, ageMonths: Int, sleepHours: Double? = nil) -> String {
+        var prompt = """
         You are NestWise, a warm and trusted AI parenting companion. \
         You are helping a parent with their child named \(childName), \
         who is \(ageMonths) months old (\(ageMonths / 12) years \(ageMonths % 12) months). \
@@ -44,5 +44,15 @@ enum AppConstants {
         a paediatrician for medical concerns. \
         Keep responses concise, warm, and jargon-free — 2 to 4 short paragraphs maximum.
         """
+        
+        if let sleep = sleepHours {
+            if sleep < 6.0 {
+                prompt += "\n\nImportant context: The parent slept only \(String(format: "%.1f", sleep)) hours last night. Be extra encouraging, empathetic, and keep your answers brief as they are likely tired."
+            } else {
+                prompt += "\n\nImportant context: The parent slept \(String(format: "%.1f", sleep)) hours last night."
+            }
+        }
+        
+        return prompt
     }
 }
