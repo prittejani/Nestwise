@@ -36,7 +36,15 @@ struct HomeView: View {
             .background(NWColors.background)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { toolbarContent }
-            .onAppear { viewModel.updateGreeting() }
+            .onAppear { 
+                viewModel.updateGreeting() 
+                
+                // Request push notifications if not already requested
+                if !UserDefaults.standard.bool(forKey: AppConstants.Keys.notificationsRequested) {
+                    NotificationManager.shared.requestPermission()
+                    UserDefaults.standard.set(true, forKey: AppConstants.Keys.notificationsRequested)
+                }
+            }
         }
     }
 

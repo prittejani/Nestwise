@@ -4,6 +4,7 @@
 import SwiftUI
 import SwiftData
 import StoreKit
+import UserNotifications
 
 struct SettingsView: View {
 
@@ -11,10 +12,16 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     @Environment(\.requestReview) private var requestReview
+    @Environment(\.scenePhase) private var scenePhase
 
     @Query private var children: [ChildProfile]
     @State private var showDeleteConfirmation = false
     @State private var showAbout = false
+    @State private var showSettingsAlert = false
+    @State private var notificationStatus: UNAuthorizationStatus = .notDetermined
+    
+    @AppStorage(AppConstants.Keys.dailyTipsEnabled) private var dailyTipsEnabled = false
+    @AppStorage(AppConstants.Keys.milestoneNudgesEnabled) private var milestoneNudgesEnabled = false
 
     private let isPro = UserDefaults.standard.bool(forKey: AppConstants.Keys.isPro)
 
@@ -40,6 +47,19 @@ struct SettingsView: View {
                     )
                 }
                 */
+
+                // MARK: Notifications
+                Section("Notifications") {
+                    Toggle("Daily Parenting Tips", isOn: $dailyTipsEnabled)
+                        .onChange(of: dailyTipsEnabled) { _, newValue in
+                            handleToggleChange(newValue: newValue, isDailyTip: true)
+                        }
+                    
+                    Toggle("Milestone Reminders", isOn: $milestoneNudgesEnabled)
+                        .onChange(of: milestoneNudgesEnabled) { _, newValue in
+                            handleToggleChange(newValue: newValue, isDailyTip: false)
+                        }
+                }
 
                 // MARK: Privacy
                 Section("Privacy") {
@@ -168,6 +188,65 @@ struct SettingsView: View {
             }
             .navigationDestination(isPresented: $showAbout) {
                 AboutView()
+            }
+            .onAppear {
+                checkNotificationPermissions()
+            }
+            .onChange(of: scenePhase) { _, newPhase in
+                if newPhase == .active {
+                    checkNotificationPermissions()
+                }
+            }
+            .alert("Notifications Disabled", isPresented: $showSettingsAlert) {
+                Button("Cancel", role: .cancel) { }
+                Button("Open Settings") {
+                    if let url = URL(string: UIApplication.openSettingsURLString) {
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    }
+                }
+            } message: {
+                Text("Please enable notifications for Nestwise in your device Settings to receive reminders.")
+            }
+        }
+    }
+    
+    // MARK: - Notifications
+    private func checkNotificationPermissions() {
+        NotificationManager.shared.checkPermissionStatus { status in
+            self.notificationStatus = status
+            if status == .denied {
+                // If denied, force toggles off
+                self.dailyTipsEnabled = false
+                self.milestoneNudgesEnabled = false
+            }
+        }
+    }
+    
+    private func handleToggleChange(newValue: Bool, isDailyTip: Bool) {
+        if newValue && notificationStatus == .denied {
+            // Revert the toggle and show alert
+            if isDailyTip {
+                dailyTipsEnabled = false
+            } else {
+                milestoneNudgesEnabled = false
+            }
+            showSettingsAlert = true
+            return
+        }
+        
+        if isDailyTip {
+            if newValue {
+                NotificationManager.shared.scheduleDailyTip()
+            } else {
+                NotificationManager.shared.cancelDailyTip()
+            }
+        } else {
+            if newValue {
+                NotificationManager.shared.rescheduleMilestoneNudge()
+            } else {
+                NotificationManager.shared.cancelMilestoneNudge()
             }
         }
     }

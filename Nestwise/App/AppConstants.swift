@@ -22,6 +22,11 @@ enum AppConstants {
         static let isPro                  = "isPro"
         static let dailyMessageCount      = "dailyMessageCount"
         static let lastMessageDate        = "lastMessageDate"
+        
+        // Notifications
+        static let notificationsRequested = "notificationsRequested"
+        static let dailyTipsEnabled       = "dailyTipsEnabled"
+        static let milestoneNudgesEnabled = "milestoneNudgesEnabled"
     }
 
     // MARK: - AI System Prompt

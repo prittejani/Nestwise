@@ -45,6 +45,9 @@ final class MilestonesViewModel: ObservableObject {
             context.insert(log)
         }
         try? context.save()
+        
+        // Reschedule nudge when any milestone activity happens
+        NotificationManager.shared.rescheduleMilestoneNudge()
     }
 
     // MARK: - Progress
